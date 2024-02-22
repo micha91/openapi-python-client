@@ -28,6 +28,13 @@ from . import (
 
 class TestsEndpoints:
     @classmethod
+    def upload_array_of_files_in_object_tests_upload_post(cls) -> types.ModuleType:
+        """
+        Upload an array of files as part of an object
+        """
+        return upload_array_of_files_in_object_tests_upload_post
+
+    @classmethod
     def get_user_list(cls) -> types.ModuleType:
         """
         Get a list of things
@@ -89,13 +96,6 @@ class TestsEndpoints:
         Upload several files in the same request
         """
         return upload_multiple_files_tests_upload_post
-
-    @classmethod
-    def upload_array_of_files_in_object_tests_upload_post(cls) -> types.ModuleType:
-        """
-        Upload an array of files as part of an object
-        """
-        return upload_array_of_files_in_object_tests_upload_post
 
     @classmethod
     def json_body_tests_json_body_post(cls) -> types.ModuleType:

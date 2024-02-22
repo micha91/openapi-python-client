@@ -20,7 +20,7 @@ def _get_kwargs(
 
     _kwargs: Dict[str, Any] = {
         "method": "post",
-        "url": "/tests/upload/multiple-files-in-object",
+        "url": "/bodies/multipart/multiple-files-in-object",
     }
 
     _body = body.to_multipart()
