@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, overload
+from typing import Any, ClassVar, overload
 
 from attr import define
 
@@ -12,7 +12,7 @@ from .string import StringProperty
 
 @define
 class ConstProperty(PropertyProtocol):
-    """A property representing a Union (anyOf) of other properties"""
+    """A property representing a const value"""
 
     name: str
     required: bool
@@ -21,6 +21,7 @@ class ConstProperty(PropertyProtocol):
     python_name: PythonIdentifier
     description: str | None
     example: None
+    template: ClassVar[str] = "const_property.py.jinja"
 
     @classmethod
     def build(
@@ -78,8 +79,7 @@ class ConstProperty(PropertyProtocol):
 
     @staticmethod
     @overload
-    def _convert_value(value: Any) -> Value:
-        ...  # pragma: no cover
+    def _convert_value(value: Any) -> Value: ...  # pragma: no cover
 
     @staticmethod
     def _convert_value(value: Any) -> Value | None:

@@ -1,8 +1,9 @@
-""" Contains methods for accessing the API """
+"""Contains methods for accessing the API"""
 
 from typing import Type
 
 from .bodies import BodiesEndpoints
+from .config import ConfigEndpoints
 from .default import DefaultEndpoints
 from .defaults import DefaultsEndpoints
 from .enums import EnumsEndpoints
@@ -64,3 +65,7 @@ class MyTestApiClientApi:
     @classmethod
     def parameter_references(cls) -> Type[ParameterReferencesEndpoints]:
         return ParameterReferencesEndpoints
+
+    @classmethod
+    def config(cls) -> Type[ConfigEndpoints]:
+        return ConfigEndpoints

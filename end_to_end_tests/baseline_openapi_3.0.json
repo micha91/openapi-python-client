@@ -1508,6 +1508,27 @@
         }
       }
     },
+    "/naming/{hyphen-in-path}": {
+      "get": {
+        "tags": ["naming"],
+        "operationId": "hyphen_in_path",
+        "parameters": [
+          {
+            "name": "hyphen-in-path",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
     "/parameter-references/{path_param}": {
       "get": {
         "tags": [
@@ -1605,6 +1626,36 @@
         "responses": {
           "200": {
             "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/config/content-type-override": {
+      "post": {
+        "tags": [
+          "config"
+        ],
+        "summary": "Content Type Override",
+        "operationId": "content_type_override",
+        "requestBody": {
+          "content": {
+            "openapi/python/client": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "openapi/python/client": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
           }
         }
       }
